@@ -11,20 +11,18 @@ book_words=file_handle=open('alice_in_wonderland.txt',mode='r')
 #("alice_in_wonderland.txt")
 bigger_vocab=file_handle=open('vocab.txt',mode='r')
 
+def search_linear(xs, target):
+    for (i, v) in enumerate(xs):
+       if v == target:
+           return i
+    return -1
+
 def find_unknown_words(vocab, wds):
-    """ Return a list of words in wds that do not occur in vocab """
     result = []
     for w in wds:
         if (search_linear(vocab, w) < 0):
             result.append(w)
     return result
-
-def search_linear(xs, target):
-    """ Find and return the index of target in sequence xs """
-    for (i, v) in enumerate(xs):
-       if v == target:
-           return i
-    return -1
 
 t0 = time.clock()
 missing_words = find_unknown_words(bigger_vocab, book_words)
