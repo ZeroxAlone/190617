@@ -8,7 +8,6 @@ Created on Sun Jun 30 07:59:02 2019
 import time
 
 book_words=file_handle=open('alice_in_wonderland.txt',mode='r')
-#("alice_in_wonderland.txt")
 bigger_vocab=file_handle=open('vocab.txt',mode='r')
 
 def search_linear(xs, target):
